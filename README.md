@@ -20,15 +20,6 @@ Choisissez **Eclipse IDE for Java Developers**
 (car nous n'utiliserons pas les outils additionnels de la version entreprise,
 mais si vous l'avez déjà installer, ce n'est pas grave).
 
-
-## Spigot
-**Spigot** est un **programme Java** qui permet de lancer un **serveur Minecraft**. Il **implémente** la **librairie Bukkit**(voir plus bas), qui permet d'appeler des **constructeurs** et des **méthodes** pour créer et manipuler tous les objets Minecraft (et même plus).
-
-
-En clair, **Spigot** c'est un **serveur minecraft** plus **léger** et plus **sécurisé** que les serveurs de base. Il existe des alternatives possiblement plus performantes (telle TacoSpigot), mais pour des raisons de simplicité, et d'unicité, nous utiliserons Spigot.
- 
-Je vous conseille d'utiliser **[Spigot version 1.14.4](https://getbukkit.org/download/spigot)**, de façon à qu'on ai tous la même chose.
-
 ## Installer GIT
 **GIT** est un outil pour gérér différentes version de son code.
 Il permet de remonter dans le temps et de pouvoir dévelloper en parrallèle avec d'autres personnes sans avoir a échanger 100000 fichiers par mails ou ftp.
@@ -36,7 +27,29 @@ Il permet de remonter dans le temps et de pouvoir dévelloper en parrallèle ave
 
 Faire une réelle explication serait aussi long qu'un cours, donc je vous expliquerai directement au besoin.
 
-# Préparer son environnement
+## Spigot, CraftBukkit et Bukkit
+**Spigot** et **CraftBukkit** sont deux **programmes Java** qui permettent de lancer un **serveur Minecraft**. Ils **implémentent** tous deux la **API Bukkit**, qui permet d'appeler des **constructeurs** et des **méthodes** pour créer et manipuler tous les objets Minecraft (et même plus).
 
+Nous allons utiliser **Spigot** c'est un **serveur minecraft** plus **léger** et plus **sécurisé** que les serveurs de base. Il existe des alternatives possiblement plus performantes (telle TacoSpigot), mais pour des raisons de simplicité, et d'unicité, nous utiliserons **Spigot**.
+
+Pour ne pas tout faire à la main, on aura qu'a télécharger **[BuildTools.jar](https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar)** et le lancer avec notre terminal à l'endroit où l'on veut mettre tous nos fichiers pour le serveur.
+
+> java -jar BuildTools.jar --rev 1.14.4
+
+# Préparer son environnement
+## Importer ou créer un nouveau projet
+
+## Bukkit
+Comme je l'ai dit avant, **Spigot** n'est que le serveur. Pour pouvoir programmer dans de bonnes conditions, il nous faut importer l'**API BUKKIT** dans **Eclipse** afin d'avoir automatiquement les suggestions et acceder à la **documentation** facilement.
+
+### Ajouter Bukkit à notre projet
+Allez dans les propriétés du projet > Java Build Path(menu de gauche) > Libraries(3ème onglet).
+Cliquez ensuite sur "Modulepath" puis dans le menu de droite "Add External JARs..." et choisissez le fichier .jar "VotreDossier/Bukkit/target/bukkit-1.14XXXXXXXXXXXXXXXX-SNAPSHOT-shaded.jar".
+
+Maintenant, vous devriez voir votre nouveau ".jar" au dessus du jre. Il nous reste plus qu'a ajouter la javadoc.
+
+### Ajouter la javadoc
+Cliquez sur le chevron à droite du "bukkitXXX.jar", et éditez Javadoc location afin de mettre l'addresse suivante :
+> https://hub.spigotmc.org/javadocs/bukkit/ 
 
 # Compiler et lancer le plugin
