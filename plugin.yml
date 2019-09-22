@@ -1,0 +1,11 @@
+name: MyTestPlugin
+version: 0.1
+description: Mon plugin de test
+
+main: fr.s1b.mytestplugin.Main
+
+commands:
+  mytestplugin:
+    description: just a test.
+    usage: use "/mytestplugin"
+    permission: permission.mytestplugin

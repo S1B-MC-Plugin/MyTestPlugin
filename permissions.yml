@@ -1,0 +1,4 @@
+permissions:
+  mytestplugin:
+    description: permet d'utiliser la commande test
+    default: true
