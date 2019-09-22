@@ -52,4 +52,19 @@ Maintenant, vous devriez voir votre nouveau ".jar" au dessus du jre. Il nous res
 Cliquez sur le chevron à droite du "bukkitXXX.jar", et éditez Javadoc location afin de mettre l'addresse suivante :
 > https://hub.spigotmc.org/javadocs/bukkit/ 
 
+# Créer son premier plugin
+
+
+
+
 # Compiler et lancer le plugin
+Pour compiler votre projet, vous devez choisir d'exporter votre projet au format **.jar**.
+Il vous suffira ensuite de mettre se **.jar** dans le dossier **plugins** de votre serveur et de **redémarrer** le serveur.
+
+## Mon plugin n'est pas trouvé par le serveur
+Assurez-vous de l'avoir placé au bon endroit, et que vous avez bien mis les différents **.yml** lors de l'export.
+
+## Mon plugin est bian activé, mais beaucoup de lignes d'erreurs sont affichées juste après
+Le plus problable dans ce cas la, c'est qu'il y ait une erreur dans **plugin.yml** ou dans **permissions.yml**.
+Maintenant, l'erreur la plus probable risque d'être une faute dans le nom de la commande et/ou de la permission associée.
+> Note: Pour débugger plus facilement, copiez toutes les commandes et le permissions dans un autre fichier, et réintegrez les progressivement jusqu'à ce que le plugin casse, et vous aurez sûrement localisé l'erreur.
