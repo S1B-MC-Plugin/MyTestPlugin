@@ -87,11 +87,36 @@ Au jugé, on peut dire que si la phrase "X est un Y" alors il y a des chances de
 Notre **"classe principale"** est un **JavaPlugin**, on exprime cela avec le mot clef **extends** :
 > class Main **extends** JavaPlugin {
 
+### Redéfinir les methodes onEnable et onDisable
+En **héritant** de la classe **JavaPlugin**, nous **héritons** aussi de toutes ses **méthodes et attributs *public* et *protected***.
+
+Nous avons donc accès à [de nombreuses méthodes](https://jd.bukkit.org/org/bukkit/plugin/java/JavaPlugin.html).
+
+Dans un premier temps, nous n'utiliserons que les méthodes onEnable() et onDisable().
+> public void **onDisable()**
+> *Called when this plugin is disabled*
+
+> public void	**onEnable()**
+> *Called when this plugin is enabled*
+
+Nous pouvons donc ajouter ces méthodes dans notre classe !
+Cependant, il nous faut préciser que l'on veut remplacer les méthodes de JavaPlugin.
+
+Le mot-clé **@override** est utilisé pour définir une **méthode** qui est **héritée de la classe parente**. 
+On ne l'utilise donc que dans le cas de l'héritage. En plaçant ce mot-clé juste au dessus de la méthode réécrite, le **compilateur vérifiera** que la **méthode** est **correctement redéfinie** (mêmes **arguments**, même **type de valeur de retour**) et affichera un message d'avertissement si ce n'est pas le cas.
+
+> **@override** \
+> public void **onEnable**() {
+>
+> }
+
 
 # Compiler et lancer le plugin
 Pour compiler votre projet, vous devez choisir d'exporter votre projet au format **.jar**.
 Il vous suffira ensuite de mettre se **.jar** dans le dossier **plugins** de votre serveur et de **redémarrer** le serveur.
 
+
+# Troubleshooting
 ## Mon plugin n'est pas trouvé par le serveur
 Assurez-vous de l'avoir placé au bon endroit, et que vous avez bien mis les différents **.yml** lors de l'export.
 
