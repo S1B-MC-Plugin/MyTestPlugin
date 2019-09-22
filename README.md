@@ -53,8 +53,39 @@ Cliquez sur le chevron à droite du "bukkitXXX.jar", et éditez Javadoc location
 > https://hub.spigotmc.org/javadocs/bukkit/ 
 
 # Créer son premier plugin
+C'est là que les choses se corsent, et surtout là que ça devient intérressant.
+
+Clairement, le **niveau "requis"** ici est bien **supérieur** a celui que la plupart d'entre vous a pour l'instant.
+Mais on compte bien changer ça non ? Donc pas de panique, on va voir ça au fûr et à mesure.
+> Note: Certaines explications ne seront que partiellement correcte, pour des raisons de simplicité.
 
 
+La **règle absolue à respecter** dès à présent est la suivante :
+> Je ne comprends/connais pas ? Je me renseigne !
+> **Se renseigner**, c'est aussi bien **demander** à vos **camarades**, à **moi** ou regarder sur **internet**.
+
+## Prêt à programmer ?
+C'est parti !!!
+
+## Classe principale
+Pendant le cours, nous avons vu que le **point d'entrée** de notre **programme** était la **fonction main**.
+> public static void **main**(String... args) {}
+
+Mais ça, c'est quand notre projet est lui-même le programme principal !
+
+
+Dans notre cas, le **programme principal** est le serveur **Spigot**.
+Il va donc falloir fournir à **Spigot** un moyen d'utiliser **nos fonctions**. 
+
+### Hériter de JavaPlugin
+En **Java**, est dans les autres **langages orientés objets**, on retrouve la notion d'**héritage**.
+L'**héritage** sert à avoir toutes les **caractéristiques de son parent** en plus d'**avoir les siennes**.
+
+Au jugé, on peut dire que si la phrase "X est un Y" alors il y a des chances de pouvoir en hériter.
+> Pour de plus amples informations, on peux regarder sur le [wikibook](https://fr.wikibooks.org/wiki/Programmation_Java/H%C3%A9ritage).
+
+Notre **"classe principale"** est un **JavaPlugin**, on exprime cela avec le mot clef **extends** :
+> class Main **extends** JavaPlugin {
 
 
 # Compiler et lancer le plugin
@@ -64,7 +95,7 @@ Il vous suffira ensuite de mettre se **.jar** dans le dossier **plugins** de vot
 ## Mon plugin n'est pas trouvé par le serveur
 Assurez-vous de l'avoir placé au bon endroit, et que vous avez bien mis les différents **.yml** lors de l'export.
 
-## Mon plugin est bian activé, mais beaucoup de lignes d'erreurs sont affichées juste après
+## Mon plugin est bien activé, mais beaucoup de lignes d'erreurs sont affichées juste après
 Le plus problable dans ce cas la, c'est qu'il y ait une erreur dans **plugin.yml** ou dans **permissions.yml**.
 Maintenant, l'erreur la plus probable risque d'être une faute dans le nom de la commande et/ou de la permission associée.
 > Note: Pour débugger plus facilement, copiez toutes les commandes et le permissions dans un autre fichier, et réintegrez les progressivement jusqu'à ce que le plugin casse, et vous aurez sûrement localisé l'erreur.
