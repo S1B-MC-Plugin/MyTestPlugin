@@ -93,28 +93,50 @@ En **héritant** de la classe **JavaPlugin**, nous **héritons** aussi de toutes
 Nous avons donc accès à [de nombreuses méthodes](https://jd.bukkit.org/org/bukkit/plugin/java/JavaPlugin.html).
 
 Dans un premier temps, nous n'utiliserons que les méthodes onEnable() et onDisable().
-> public void **onDisable()**
+> public void **onDisable()**\
 > *Called when this plugin is disabled*
 
-> public void	**onEnable()**
+> public void	**onEnable()**\
 > *Called when this plugin is enabled*
 
 Nous pouvons donc ajouter ces méthodes dans notre classe !
 Cependant, il nous faut préciser que l'on veut remplacer les méthodes de JavaPlugin.
 
-Le mot-clé **@override** est utilisé pour définir une **méthode** qui est **héritée de la classe parente**. 
+Le mot-clé **@Override** est utilisé pour définir une **méthode** qui est **héritée de la classe parente**. 
 On ne l'utilise donc que dans le cas de l'héritage. En plaçant ce mot-clé juste au dessus de la méthode réécrite, le **compilateur vérifiera** que la **méthode** est **correctement redéfinie** (mêmes **arguments**, même **type de valeur de retour**) et affichera un message d'avertissement si ce n'est pas le cas.
 
-> **@override** \
-> public void **onEnable**() {
->
-> }
+```java
+@Override
+public void onEnable() {
+}
+```
 
 
 # Compiler et lancer le plugin
 Pour compiler votre projet, vous devez choisir d'exporter votre projet au format **.jar**.
 Il vous suffira ensuite de mettre se **.jar** dans le dossier **plugins** de votre serveur et de **redémarrer** le serveur.
 
+
+## Le fichier plugin.yml
+Le fichier **plugin.yml** est un fichier qui a pour but de **décrire votre plugin**. Celui-ci doit se trouver à la racine du **.jar**, et doit comporter au moins les 3 lignes suivantes
+
+> **name:** [LeNomDePlugin]\
+> **version:** [*le numéro de version e.g.:* 1.2]\
+> **main:** [le.path.vers.la.classe.Main]
+
+Voici un exemple plus concret tiré du "plugin de test":
+
+```yaml
+name: MyTestPlugin
+version: 0.1
+description: Mon plugin de test
+
+main: fr.s1b.mytestplugin.Main
+```
+
+
+
+Toutes les infos sur ce que l'on peut mettre dans ce fichier est disponnible à l'adresse suivante: https://bukkit.gamepedia.com/Plugin_YAML/fr
 
 # Troubleshooting
 ## Mon plugin n'est pas trouvé par le serveur
