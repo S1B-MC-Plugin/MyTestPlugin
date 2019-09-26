@@ -34,7 +34,9 @@ Nous allons utiliser **Spigot** c'est un **serveur minecraft** plus **léger** e
 
 Pour ne pas tout faire à la main, on aura qu'a télécharger **[BuildTools.jar](https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar)** et le lancer avec notre terminal à l'endroit où l'on veut mettre tous nos fichiers pour le serveur.
 
-> java -jar BuildTools.jar --rev 1.14.4
+```console
+java -jar BuildTools.jar --rev 1.14.4
+```
 
 # Préparer son environnement
 ## Importer ou créer un nouveau projet
@@ -69,7 +71,9 @@ C'est parti !!!
 
 ## Classe principale
 Pendant le cours, nous avons vu que le **point d'entrée** de notre **programme** était la **fonction main**.
-> public static void **main**(String... args) {}
+```java
+public static void main(String... args) {}
+```
 
 Mais ça, c'est quand notre projet est lui-même le programme principal !
 
@@ -85,7 +89,9 @@ Au jugé, on peut dire que si la phrase "X est un Y" alors il y a des chances de
 > Pour de plus amples informations, on peux regarder sur le [wikibook](https://fr.wikibooks.org/wiki/Programmation_Java/H%C3%A9ritage).
 
 Notre **"classe principale"** est un **JavaPlugin**, on exprime cela avec le mot clef **extends** :
-> class Main **extends** JavaPlugin {
+```java
+class Main extends JavaPlugin {
+```
 
 ### Redéfinir les methodes onEnable et onDisable
 En **héritant** de la classe **JavaPlugin**, nous **héritons** aussi de toutes ses **méthodes et attributs *public* et *protected***.
